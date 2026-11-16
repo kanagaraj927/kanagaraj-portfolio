@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#F5F0E8" />
+<meta name="description" content="Kanagaraj is a freelance React developer who builds web and mobile apps, from first idea to a deployed product." />
+<title>Kanagaraj | Freelance React developer</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..700,0..100&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet" />
+<style>
+:root{--ivory:#F5F0E8;--deep:#EAE2D3;--ember:#FF5A36;--wine:#351C25;--lilac:#CBBBF5;--lime:#C6F25E;--line:rgba(53,28,37,.14);--muted:rgba(53,28,37,.78)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;background:var(--ivory)}
+body{background:var(--ivory);color:var(--wine);font-family:'DM Sans',system-ui,sans-serif;font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+ul,ol{list-style:none}
+::selection{background:var(--ember);color:var(--wine)}
+:focus-visible{outline:3px solid var(--wine);outline-offset:3px;border-radius:6px}
+.serif{font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 60;font-weight:600;letter-spacing:-.02em;line-height:1.08}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.25rem}
+@media(min-width:768px){.wrap{padding:0 2rem}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip:focus{position:fixed;left:1rem;top:1rem;width:auto;height:auto;clip:auto;background:var(--ember);padding:.5rem 1rem;border-radius:.5rem;z-index:100;font-weight:700}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.85rem 1.5rem;border-radius:.75rem;font-weight:600;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--ember)}
+.btn.primary:hover{background:#ff7050;box-shadow:0 8px 20px -8px rgba(255,90,54,.6)}
+.btn.ghost{border:1.5px solid var(--wine)}
+.btn.ghost:hover{background:var(--deep)}
+.btn.dark{background:var(--wine);color:var(--ivory)}
+.btn.dark:hover{background:#4a2a35}
+.btn.light{background:var(--ivory)}
+.btn.light:hover{background:#fff}
+.ico{width:1.2rem;height:1.2rem;flex-shrink:0}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(245,240,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:4.25rem}
+.logo{font-size:1.4rem}
+.links{display:none;align-items:center;gap:.25rem}
+.links a{padding:.5rem .9rem;border-radius:.5rem;font-size:.95rem;font-weight:500;transition:background .2s}
+.links a:hover{background:var(--deep)}
+.links a.cta{background:var(--ember);font-weight:700;margin-left:.5rem}
+.links a.cta:hover{background:#ff7050}
+.burger{width:2.75rem;height:2.75rem;border-radius:.6rem;border:1px solid var(--line);font-size:1.25rem}
+.mobile{display:none;border-top:1px solid var(--line);padding:.5rem 1.25rem 1rem}
+.mobile.open{display:block}
+.mobile a{display:block;padding:.75rem 0;font-weight:500;border-bottom:1px solid var(--line)}
+@media(min-width:820px){.links{display:flex}.burger,.mobile{display:none!important}}
+
+/* sections */
+section{padding:4.5rem 0}
+@media(min-width:768px){section{padding:6.5rem 0}}
+.sec-head{max-width:40rem;margin-bottom:2.75rem}
+.sec-head h2{font-size:clamp(2rem,4.6vw,3rem)}
+.sec-head p{margin-top:.9rem;color:var(--muted);font-size:1.1rem}
+.alt{background:var(--deep)}
+.card{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:1.25rem;padding:1.5rem}
+.alt .card{background:rgba(245,240,232,.75)}
+
+/* hero */
+.hero{padding-top:3.5rem;padding-bottom:4.5rem}
+@media(min-width:768px){.hero{padding-top:6rem;padding-bottom:7rem}}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.25fr .75fr;gap:4rem}}
+.status{display:inline-flex;align-items:center;gap:.6rem;background:var(--lime);border-radius:999px;padding:.4rem 1rem;font-size:.9rem;font-weight:600}
+.status i{width:.55rem;height:.55rem;border-radius:50%;background:var(--wine)}
+.hero h1{font-size:clamp(2.7rem,7vw,5rem);margin-top:1.5rem;line-height:1.02}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 64%,var(--ember) 64%,var(--ember) 92%,transparent 92%)}
+.hero .role{margin-top:1.25rem;font-size:clamp(1.15rem,2.2vw,1.45rem);line-height:1.45;max-width:34rem}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.25rem}
+.facts{position:relative;background:var(--deep);border-radius:1.5rem;padding:2rem}
+.facts::before{content:"";position:absolute;left:2rem;right:2rem;top:0;height:5px;background:var(--ember);border-radius:0 0 6px 6px}
+.facts dl{display:grid;gap:1.25rem}
+.facts dt{font-size:.85rem;font-weight:700;color:var(--muted)}
+.facts dd{margin-top:.15rem;font-size:1.08rem;line-height:1.4;font-weight:500}
+
+/* services */
+.grid2{display:grid;gap:1.25rem}
+@media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}}
+.svc .ic{width:3rem;height:3rem;border-radius:.9rem;display:grid;place-items:center;margin-bottom:1.1rem}
+.svc h3{font-size:1.45rem}
+.svc p{margin-top:.6rem}
+.svc .eg{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted)}
+.svc .eg b{color:var(--wine)}
+
+/* work */
+.grid3{display:grid;gap:1.5rem}
+@media(min-width:760px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.proj{display:flex;flex-direction:column;background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:1.5rem;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.proj:hover{transform:translateY(-6px);box-shadow:0 22px 40px -24px rgba(53,28,37,.45)}
+.alt .proj{background:rgba(245,240,232,.75)}
+.thumb{height:14rem;display:grid;place-items:center;padding:1.25rem}
+.pbody{display:flex;flex-direction:column;flex:1;padding:1.5rem}
+.pill{align-self:flex-start;background:var(--deep);border-radius:999px;padding:.25rem .8rem;font-size:.82rem;font-weight:700}
+.pbody h3{font-size:1.9rem;margin-top:.9rem}
+.pbody p{margin-top:.7rem}
+.pbody p.arc{color:var(--muted);font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:auto;padding-top:1.25rem}
+.tags li{border:1px solid var(--wine);border-radius:999px;padding:.15rem .7rem;font-size:.82rem;font-weight:600}
+.ill{background:var(--ivory);border-radius:1rem;padding:.9rem;width:100%;max-width:17rem}
+.heat{display:grid;grid-template-columns:repeat(14,1fr);grid-template-rows:repeat(5,auto);grid-auto-flow:column;gap:4px}
+.heat span{aspect-ratio:1;border-radius:3px}
+.mini-bars{display:flex;align-items:flex-end;gap:5px;height:3rem;margin-top:.8rem}
+.mini-bars span{flex:1;background:var(--ember);border-radius:4px 4px 0 0}
+.ill .ln{height:.6rem;border-radius:99px;background:var(--deep);margin-top:.55rem}
+.ill .pic{height:5.5rem;border-radius:.7rem;background:var(--lilac)}
+.ill .pay{margin-top:.9rem;background:var(--ember);border-radius:.6rem;padding:.45rem;text-align:center;font-size:.8rem;font-weight:700}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;width:100%;max-width:17rem}
+.tile{aspect-ratio:1;background:var(--ivory);border-radius:.9rem;padding:.6rem;display:flex;flex-direction:column;justify-content:space-between;font-size:.78rem;font-weight:700}
+.tile i{width:1.4rem;height:1.4rem;border-radius:50%;background:var(--ember);display:block}
+.note{margin-top:1.75rem;color:var(--muted);font-size:.95rem}
+
+/* process (a real sequence, so numbered) */
+.steps{display:grid;gap:1.25rem;counter-reset:s}
+@media(min-width:760px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--ember);font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.15rem;margin-bottom:1rem}
+.step h3{font-size:1.15rem;font-weight:700}
+.step p{margin-top:.4rem;color:var(--muted)}
+
+/* about */
+.about-grid{display:grid;gap:2.5rem}
+@media(min-width:900px){.about-grid{grid-template-columns:.9fr 1.1fr;gap:4rem}}
+.about-lead{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2}
+.about-body p{margin-bottom:1.1rem;max-width:38rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.chips li{background:var(--ivory);border:1px solid var(--line);border-radius:999px;padding:.3rem .9rem;font-size:.92rem;font-weight:600}
+
+/* contact */
+.contact-box{background:var(--ember);border-radius:1.75rem;padding:2rem 1.25rem;display:grid;gap:2.5rem}
+@media(min-width:768px){.contact-box{padding:3.5rem}}
+@media(min-width:960px){.contact-box{grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}}
+.contact-box h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+.contact-box .lead{margin-top:1rem;font-size:1.15rem;max-width:30rem}
+.direct{display:grid;gap:.85rem;margin-top:2rem}
+.direct a.row{display:flex;align-items:center;gap:1rem;background:rgba(245,240,232,.55);border-radius:1rem;padding:.9rem 1.1rem;transition:background .2s,transform .2s}
+.direct a.row:hover{background:var(--ivory);transform:translateY(-2px)}
+.direct .badge{width:2.75rem;height:2.75rem;border-radius:.8rem;background:var(--wine);color:var(--ivory);display:grid;place-items:center;flex-shrink:0}
+.direct small{display:block;font-size:.82rem;font-weight:700;line-height:1.2}
+.direct strong{display:block;font-size:1.05rem;overflow-wrap:anywhere;line-height:1.3}
+.c-links{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:1.25rem;font-weight:600}
+.c-links a{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+form{background:var(--ivory);border-radius:1.25rem;padding:1.5rem}
+@media(min-width:768px){form{padding:2rem}}
+form h3{font-size:1.5rem}
+form .hint{margin-top:.35rem;color:var(--muted);font-size:.95rem}
+.field{margin-top:1.1rem}
+.field label{display:block;font-size:.9rem;font-weight:700;margin-bottom:.4rem}
+.field input,.field select,.field textarea{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:.75rem;padding:.8rem 1rem;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:7.5rem;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--wine);box-shadow:0 0 0 3px rgba(255,90,54,.35)}
+.form-actions{display:grid;gap:.75rem;margin-top:1.5rem}
+@media(min-width:520px){.form-actions{grid-template-columns:1fr 1fr}}
+footer{padding:2rem 0 2.5rem;border-top:1px solid var(--line);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a:hover{text-decoration:underline}
+
+/* floating whatsapp */
+.float{position:fixed;right:1rem;bottom:1rem;z-index:60;display:inline-flex;align-items:center;gap:.55rem;background:var(--lime);border:1.5px solid var(--wine);border-radius:999px;padding:.75rem 1.15rem;font-weight:700;box-shadow:0 12px 24px -12px rgba(53,28,37,.55);transition:transform .2s}
+.float:hover{transform:translateY(-3px)}
+
+/* gentle reveal */
+html.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+html.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}html.js .rv{opacity:1;transform:none;transition:none}.btn,.proj,.float,.direct a.row{transition:none}}
+</style>
+</head>
+<body>
+<a class="sr skip" href="#services">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="logo serif">Kanagaraj</a>
+    <nav class="links" aria-label="Primary">
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact" class="cta">Hire me</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile" id="mobile">
+    <a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Hire me</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="status"><i></i>Available for freelance projects</span>
+      <h1 class="serif">Freelance <em>React</em> developer</h1>
+      <p class="role">I'm Kanagaraj. I build web and mobile apps, from first idea to a deployed product.</p>
+      <div class="actions">
+        <a class="btn primary js-wa" href="#" target="_blank" rel="noreferrer"><svg class="ico"><use href="#i-wa"/></svg>Chat on WhatsApp</a>
+        <a class="btn ghost" href="#work">See my work</a>
+      </div>
+    </div>
+    <aside class="facts" aria-label="Quick facts">
+      <dl>
+        <div><dt>What I do</dt><dd>Web apps, mobile apps, payments and dashboards</dd></div>
+        <div><dt>Main tools</dt><dd>React, React Native, Node.js, Express</dd></div>
+        <div><dt>Built and deployed</dt><dd>Ledger, a tracking app you can install</dd></div>
+        <div><dt>Best way to reach me</dt><dd>WhatsApp or email</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv"><h2 class="serif">What I can build for you</h2><p>Four kinds of projects I'm set up to take on.</p></div>
+    <div class="grid2">
+      <article class="card svc rv"><span class="ic" style="background:var(--ember)"><svg class="ico"><use href="#i-web"/></svg></span><h3 class="serif">Websites and web apps</h3><p>Fast, responsive React apps that work on phones, tablets and desktops.</p><p class="eg"><b>Example:</b> Ledger, a habit and expense tracker built for the web.</p></article>
+      <article class="card svc rv"><span class="ic" style="background:var(--lilac)"><svg class="ico"><use href="#i-phone"/></svg></span><h3 class="serif">Mobile apps</h3><p>Phone apps built with React Native and Expo, or installable web apps (PWAs) when that fits better.</p><p class="eg"><b>Example:</b> Ledger started as a React Native and Expo app, then became a PWA.</p></article>
+      <article class="card svc rv"><span class="ic" style="background:var(--lime)"><svg class="ico"><use href="#i-card"/></svg></span><h3 class="serif">Online stores with payments</h3><p>A Node.js and Express backend with Razorpay checkout, so you can sell and get paid online.</p><p class="eg"><b>Example:</b> Studywell, a store for digital products.</p></article>
+      <article class="card svc rv"><span class="ic" style="background:var(--deep);border:1px solid var(--line)"><svg class="ico"><use href="#i-chart"/></svg></span><h3 class="serif">Dashboards and trackers</h3><p>Clear screens and charts for tracking money, habits, study, fitness or any data you care about.</p><p class="eg"><b>Example:</b> LIFE OS, a personal dashboard with a money manager and planner.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head rv"><h2 class="serif">Work I've built</h2><p>These are my own projects, built end to end. They show how I work.</p></div>
+    <div class="grid3">
+      <article class="proj rv">
+        <div class="thumb" style="background:var(--ember)"><div class="ill" aria-hidden="true"><div class="heat" id="heat"></div><div class="mini-bars"><span style="height:40%"></span><span style="height:65%"></span><span style="height:50%"></span><span style="height:85%"></span><span style="height:60%"></span><span style="height:95%"></span><span style="height:75%"></span></div></div></div>
+        <div class="pbody"><span class="pill">Built and deployed</span><h3 class="serif">Ledger</h3>
+          <p>A personal tracker for habits, goals, expenses and fitness, installable as a progressive web app.</p>
+          <p class="arc">It began as a React Native and Expo app, then I rebuilt it for the web so it runs on any device.</p>
+          <ul class="tags"><li>React</li><li>PWA</li><li>Recharts</li><li>React Native (v1)</li></ul></div>
+      </article>
+      <article class="proj rv">
+        <div class="thumb" style="background:var(--lilac)"><div class="ill" aria-hidden="true"><div class="pic"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:55%"></div><div class="pay">Pay with Razorpay</div></div></div>
+        <div class="pbody"><span class="pill">Razorpay integrated</span><h3 class="serif">Studywell</h3>
+          <p>A store for digital products with a checkout powered by Razorpay and an Express backend.</p>
+          <p class="arc">It started as a prototype with no payments and grew into a full payment-integrated build.</p>
+          <ul class="tags"><li>Node.js</li><li>Express</li><li>Razorpay</li></ul></div>
+      </article>
+      <article class="proj rv">
+        <div class="thumb" style="background:var(--lime)"><div class="tiles" aria-hidden="true"><div class="tile"><i></i>Dashboard</div><div class="tile"><i></i>Money</div><div class="tile"><i></i>Study</div><div class="tile"><i></i>Fitness</div><div class="tile"><i></i>Habits</div><div class="tile"><i></i>Planner</div></div></div>
+        <div class="pbody"><span class="pill">In progress</span><h3 class="serif">LIFE OS</h3>
+          <p>A personal life tracker with a dashboard, money manager, study, fitness, habits and a daily planner.</p>
+          <p class="arc">Written in plain HTML, CSS and JavaScript, and still growing.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+      </article>
+    </div>
+    <p class="note">The images above are drawn illustrations of each app's layout, not screenshots. Ask me on WhatsApp if you'd like to see them running.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv"><h2 class="serif">How we'd work together</h2><p>A simple path from your idea to a live product.</p></div>
+    <ol class="steps">
+      <li class="card step rv"><h3>Tell me your idea</h3><p>Message me on WhatsApp or email, or fill in the form below.</p></li>
+      <li class="card step rv"><h3>Agree the plan</h3><p>We decide what to build, what's included, and how long it should take.</p></li>
+      <li class="card step rv"><h3>I build it</h3><p>I design and code your app, and show you progress along the way.</p></li>
+      <li class="card step rv"><h3>Launch</h3><p>I deploy it so it's live and hand it over to you.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <h2 class="serif about-lead rv">A developer who builds things people can open on their phone and actually use.</h2>
+    <div class="about-body rv">
+      <p>I'm Kanagaraj, a final-year B.E. Computer Science Engineering student at ARM College of Engineering and Technology, and I take on freelance projects.</p>
+      <p>I'm early in my career, so my own projects are my portfolio. I've built and deployed Ledger, added Razorpay payments to Studywell, and I'm still building LIFE OS. Most start as a tool I want myself and grow into something others can use.</p>
+      <p>I'm also learning AI/ML and cloud, so I'm always picking up new skills.</p>
+      <ul class="chips" aria-label="Tools"><li>React</li><li>React Native</li><li>Expo</li><li>Node.js</li><li>Express</li><li>Razorpay</li><li>Recharts</li><li>Vite</li><li>Vercel</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact-box rv">
+      <div>
+        <h2 class="serif">Have a project in mind?</h2>
+        <p class="lead">Tell me what you want to build. WhatsApp is the quickest way to reach me, and email works too.</p>
+        <div class="direct">
+          <a class="row js-wa" href="#" target="_blank" rel="noreferrer"><span class="badge"><svg class="ico"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><strong id="phoneText"></strong></span></a>
+          <a class="row js-mail" href="#"><span class="badge"><svg class="ico"><use href="#i-mail"/></svg></span><span><small>Email</small><strong id="emailText"></strong></span></a>
+        </div>
+        <ul class="c-links" id="links"></ul>
+      </div>
+
+      <form id="brief" novalidate>
+        <h3 class="serif">Send me a quick brief</h3>
+        <p class="hint">It opens WhatsApp or your email with your message ready to send.</p>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required /></div>
+        <div class="field"><label for="f-type">What do you need?</label>
+          <select id="f-type" name="type" required>
+            <option value="">Choose one</option>
+            <option>A website or web app</option>
+            <option>A mobile app</option>
+            <option>An online store with payments</option>
+            <option>A dashboard or tracker</option>
+            <option>Something else</option>
+          </select></div>
+        <div class="field"><label for="f-msg">Tell me about it</label><textarea id="f-msg" name="msg" required placeholder="What should it do? Who is it for? When do you need it?"></textarea></div>
+        <div class="form-actions">
+          <button type="button" class="btn dark" id="sendWa"><svg class="ico"><use href="#i-wa"/></svg>Send on WhatsApp</button>
+          <button type="button" class="btn ghost" id="sendMail"><svg class="ico"><use href="#i-mail"/></svg>Send by email</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><p>© <span id="year">2026</span> Kanagaraj. Freelance React developer.</p><a href="#top">Back to top ↑</a></div></footer>
+
+<a class="float js-wa" href="#" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</a>
+
+<script>
+/* ===== EDIT ME ===== */
+const CONFIG = {
+  email: 'kanagaraj79.k@gmail.com',
+  whatsapp: '916382466314',          // country code 91 + number, digits only
+  phoneDisplay: '+91 63824 66314',
+  greeting: "Hi Kanagaraj, I saw your portfolio and I'd like to talk about a project.",
+  links: [
+    // { label: 'GitHub', href: 'https://github.com/your-username' },
+    // { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-username' },
+  ],
+};
+/* ==================== */
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const waLink = (text) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+const mailLink = (subject, body) => `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+/* contact links */
+$$('.js-wa').forEach(a => a.href = waLink(CONFIG.greeting));
+$$('.js-mail').forEach(a => a.href = mailLink('Project enquiry', CONFIG.greeting));
+$('#phoneText').textContent = CONFIG.phoneDisplay;
+$('#emailText').textContent = CONFIG.email;
+$('#links').innerHTML = CONFIG.links.map(l => `<li><a href="${l.href}" target="_blank" rel="noreferrer">${l.label} ↗</a></li>`).join('');
+$('#year').textContent = new Date().getFullYear();
+
+/* brief form -> WhatsApp or email */
+const form = $('#brief');
+function brief() {
+  if (!form.reportValidity()) return null;
+  const name = $('#f-name').value.trim(), type = $('#f-type').value, msg = $('#f-msg').value.trim();
+  return { name, type, text: `Hi Kanagaraj, I'm ${name}.\nI'm looking for: ${type}.\n\n${msg}` };
+}
+$('#sendWa').addEventListener('click', () => { const b = brief(); if (b) window.open(waLink(b.text), '_blank', 'noopener'); });
+$('#sendMail').addEventListener('click', () => { const b = brief(); if (b) location.href = mailLink(`Project enquiry: ${b.type}`, b.text); });
+
+/* Ledger illustration */
+const HEAT = ['#EAE2D3', '#CBBBF5', '#C6F25E', '#351C25'];
+$('#heat').innerHTML = Array.from({ length: 70 }, (_, i) => {
+  const r = i % 5, c = Math.floor(i / 5), v = Math.sin(r * 12.9898 + c * 78.233) * 43758.5453;
+  return `<span style="background:${HEAT[Math.floor((v - Math.floor(v)) * 4)]}"></span>`;
+}).join('');
+
+/* mobile menu */
+const burger = $('#burger'), mobile = $('#mobile');
+function setMenu(open) { mobile.classList.toggle('open', open); burger.textContent = open ? '✕' : '☰'; burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); }
+burger.addEventListener('click', () => setMenu(!mobile.classList.contains('open')));
+$$('a', mobile).forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => e.key === 'Escape' && setMenu(false));
+
+/* gentle reveal on scroll */
+const items = $$('.rv');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0.12 });
+  items.forEach(el => io.observe(el));
+} else { items.forEach(el => el.classList.add('in')); }
+</script>
+</body>
+</html>
